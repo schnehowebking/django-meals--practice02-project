@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block title%} Home {% endblock%} 
+
+
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="container">
+        <h1 class="text-center">All Meals</h1>
+        <hr/>
+        <div class="row d-flex align-items-center justify-content-center g-4">
+            {% for i in meals%}
+            <div class="col-md-3">
+            <div class="card">
+                    <img src="{{i.strMealThumb}}" class="card-img-top" alt="" />
+                    <div class="card-body">
+                    <h5 class="card-title">{{i.strMeal}} (MealID: {{i.idMeal}})</h5>
+                    <p class="card-text">
+                        {{'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enimmollitia magni deserunt optio obcaecati! Perferendis nam dignissimos recusandae quaerat labore. Laborum vero ratione dolor eos iure quo in eius debitis?' | truncatechars:50}}
+                    </p>
+                    <a href="{{i.strMealThumb}}" class="btn btn-primary">Show</a>
+                    </div>
+                </div>
+            </div>
+            
+            {% endfor %}
+      </div>
+    </div>
+  
+</div>
+
+{% endblock %}
